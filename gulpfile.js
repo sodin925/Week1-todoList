@@ -2,12 +2,12 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 
-gulp.task('sass', function() {
-    gulp.src('./Week3-Admin_order/*.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('./Week3-Admin_order/CSS/'))
+gulp.task('sass', function () {
+  gulp.src('./SCSS/*.scss')//抓
+  .pipe(sass())
+  .pipe(gulp.dest('./CSS/'));//建立
 });
 
-gulp.task('default', ['sass'], function() {
-    gulp.watch('./*.scss', ['sass']);
-})
+gulp.task('watch', ['sass'], function () {
+  gulp.watch('./SCSS/*.scss', ['sass']);
+});
