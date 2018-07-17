@@ -74,13 +74,13 @@
       <div>
         <!-- 1 -->
         <div>
-          <div class="card-header" id="item1">
-            <input type="checkbox" id="checkbox">
-            <span>
-              <label>前端修練</label>
-              <ion-icon class="star" name="star-outline"></ion-icon>
-              <ion-icon name="create" data-toggle="collapse" data-target="#note1" aria-expanded="false" aria-controls="note1"></ion-icon>
-            </span>
+          <div class="card-header" id="item1" name="todo">
+            <input type="checkbox" class="checkbox">
+
+            <label style="margin-right:370px;">前端修練</label>
+            <ion-icon class="heart" name="heart-empty"></ion-icon>
+            <ion-icon name="create" data-toggle="collapse" data-target="#note1" aria-expanded="false" aria-controls="note1"></ion-icon>
+          
           </div>
           <div id="note1" class="collapse" aria-labelledby="item1">
             <div class="card-body">
@@ -124,10 +124,10 @@
         </div>
         <!-- 2 -->
         <div>
-          <div class="card-header" id="item2">
-            <input type="checkbox" id="checkbox">
+          <div class="card-header" id="item2" name="todo">
+            <input type="checkbox" class="checkbox">
             <label style="margin-right:360px;">前端修練2</label>
-            <ion-icon class="star" name="star-outline"></ion-icon>
+            <ion-icon class="heart" name="heart-empty"></ion-icon>
             <ion-icon name="create" data-toggle="collapse" data-target="#note2" aria-expanded="false" aria-controls="note2"></ion-icon>
           </div>
           <div id="note2" class="collapse" aria-labelledby="item2">
@@ -171,7 +171,7 @@
           </div>
         </div>
       </div>
-      <button id="delete">Delete</button>
+      <button id="delete"><ion-icon name="trash"></ion-icon></button>
     </div>
 
 

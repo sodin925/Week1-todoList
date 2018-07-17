@@ -76,22 +76,21 @@
   margin-bottom: 20px;
 }
 
-#checkbox {
+.checkbox {
   height: 24px;
   width: 24px;
   margin-top: 20px;
 }
 
 .bg-gray {
-  background-color: rgb(230, 230, 230);
+  background-color: #808080;
 }
 
-#delete {
-  background-color: #4A90E2;
-}
 
 button {
   border-radius: 10px;
+  width: 50px;
+  height: 50px;
 }
 
 .favorite {
