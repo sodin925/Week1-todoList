@@ -1,27 +1,25 @@
 $(function () {
+
   $(".star").on("click", function () {
-    if ($(this).prop("name") == "star-outline") {
-      $(this).parent("div").css("background", "rgb(251, 252, 186)");
-      $(this).attr("name", "star");
-    } else {
-      $(this).parent("div").css("background", "rgb(230, 230, 230)");
-      $(this).attr("name", "star-outline");
-    }
+    $(".star").parent("div").toggleClass("favorite");
+    // if ($(".star").prop("name") == "star-outline") {
+    //   $(".star").parent("div").css("background", "#FFFFBB");
+    //   $(".star").attr("name", "star");
+    // } else {
+    //   $(".star").parent("div").css("background", "#F2F2F2");
+    //   $(".star").attr("name", "star-outline");
+    // }
   });
 
+  document.getElementById("delete").disabled = true;
   $("#checkbox").change(function () {
     if (this.checked) {
-      $(this).parent("div").css("background", "#757575");
+      $("#checkbox").parent("div").css("background", "rgb(124, 124, 124)");
+      document.getElementById("delete").disabled = false;
     } else {
-      $(this).parent("div").css("background", "#F2F2F2");
+      $("#checkbox").parent("div").css("background", "#F2F2F2");
+      document.getElementById("delete").disabled = true;
     }
   });
-});
 
-$("#checkbox").change(function () {
-  if (this.checked) {
-    $("#delete").button("enable");
-  } else {
-    $("#delete").button("disable");
-  }
 });

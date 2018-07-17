@@ -69,3 +69,12 @@
 
 .bg-gray {
   background-color: #e6e6e6; }
+
+#delete {
+  background-color: #4A90E2; }
+
+button {
+  border-radius: 10px; }
+
+.favorite {
+  background-color: #FFF2DC; }
