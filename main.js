@@ -19,7 +19,7 @@ $(function () {
       $(this).parent("div").css("background", "#808080");
       document.getElementById("delete").disabled = false;
       if ($("#delete").on("click", function () {
-          
+          $(this).parent("div").remove();
         }));
     } else {
       $(this).parent("div").css("background", "#F2F2F2");
