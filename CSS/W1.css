@@ -1,5 +1,10 @@
 * {
-  font-size: 20px; }
+  font-size: 20px;
+  list-style-type: none; }
+
+ul {
+  padding: 0;
+  padding-left: 0px; }
 
 .container {
   width: 620px; }
@@ -70,10 +75,15 @@
 .bg-gray {
   background-color: #808080; }
 
-button {
+#delete {
   border-radius: 10px;
   width: 50px;
   height: 50px; }
 
 .favorite {
   background-color: #FFF2DC; }
+
+.btn {
+  width: 100px;
+  height: 50px;
+  background-color: "blue"; }

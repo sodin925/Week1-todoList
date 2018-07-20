@@ -1,5 +1,11 @@
 * {
   font-size: 20px;
+  list-style-type: none;
+}
+
+ul {
+  padding: 0;
+  padding-left: 0px;
 }
 
 .container {
@@ -56,8 +62,8 @@
   >span {
     width: 500px;
     >label {
-      margin-right:370px;
-      margin-bottom:10px;
+      margin-right: 370px;
+      margin-bottom: 10px;
       height: 28px;
     }
   }
@@ -86,15 +92,18 @@
   background-color: #808080;
 }
 
-
-button {
+#delete {
   border-radius: 10px;
   width: 50px;
   height: 50px;
 }
 
 .favorite {
-  background-color: #FFF2DC;
-  // #F5A623
+  background-color: #FFF2DC; // #F5A623
 }
 
+.btn {
+  width: 100px;
+  height: 50px;
+  background-color: "blue";
+}

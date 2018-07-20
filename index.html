@@ -34,7 +34,7 @@
             <div>
               <label for="text1">
                 <ion-icon name="build"></ion-icon>名稱</label>
-              <input type="text" class="form-control" id="name1" placeholder="請輸入名稱..."></input>
+              <input type="text" class="form-control" id="nameinput" placeholder="請輸入名稱..."></input>
             </div>
             <div>
               <label>
@@ -71,9 +71,9 @@
 
 
       <!-- list -->
-      <div>
+      <ul>
         <!-- 1 -->
-        <div>
+        <li>
           <div class="card-header" id="item1" name="todo">
             <input type="checkbox" class="checkbox">
 
@@ -116,14 +116,14 @@
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">還沒想好要怎麼用</label>
                 </div>
-                <button type="submit" class="btn btn-primary">確定</button>
-                <button type="cancel" class="btn btn-primary">取消</button>
+                <button type="submit" class="btn">確定</button>
+                <button type="cancel" class="btn">取消</button>
               </form>
             </div>
           </div>
-        </div>
+        </li>
         <!-- 2 -->
-        <div>
+        <li>
           <div class="card-header" id="item2" name="todo">
             <input type="checkbox" class="checkbox">
             <label style="margin-right:360px;">前端修練2</label>
@@ -169,8 +169,8 @@
               </form>
             </div>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
       <button id="delete"><ion-icon name="trash"></ion-icon></button>
     </div>
 
