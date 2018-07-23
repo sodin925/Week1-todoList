@@ -102,8 +102,16 @@ ul {
   background-color: #FFF2DC; // #F5A623
 }
 
-.btn {
-  width: 100px;
+#cancel {
+  background-color: #77DDFF;
+  border-radius: 10px;
+  width: 80px;
   height: 50px;
-  background-color: "blue";
+}
+
+#OK {
+  background-color: #77DDFF;
+  border-radius: 10px;
+  width: 80px;
+  height: 50px;
 }

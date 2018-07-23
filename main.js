@@ -10,8 +10,6 @@ $(function () {
     }
   });
 
-
-
   document.getElementById("delete").disabled = true;
   $(".checkbox").change(function () {
     if (this.checked) {
@@ -27,18 +25,19 @@ $(function () {
       document.getElementById("delete").disabled = true;
     }
   });
-
 });
 
 function newlist() {
+  var ul = document.getElementById("mylist");
   var li = document.createElement("li");
   var nameinput = document.getElementById("nameinput").value;
-  var n = document.createTextNode(nameinput);
-  li.appendChild(n);
-  if(nameinput === "") {
+  console.log(nameinput);
+  if (nameinput === "") {
     alert("you need to write something");
   } else {
-    document.getElementById("mylist").appendChild(li);
+    li.appendChild(document.createTextNode(nameinput));
+    ul.appendChild(li);
+    li.setAttribute("class", "card");
   }
   document.getElementById("nameinput").value = "";
 }

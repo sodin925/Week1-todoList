@@ -83,7 +83,14 @@ ul {
 .favorite {
   background-color: #FFF2DC; }
 
-.btn {
-  width: 100px;
-  height: 50px;
-  background-color: "blue"; }
+#cancel {
+  background-color: #77DDFF;
+  border-radius: 10px;
+  width: 80px;
+  height: 50px; }
+
+#OK {
+  background-color: #77DDFF;
+  border-radius: 10px;
+  width: 80px;
+  height: 50px; }

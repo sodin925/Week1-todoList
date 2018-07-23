@@ -41,10 +41,10 @@
                 <ion-icon name="calendar"></ion-icon>到期日</label>
               <div class="row">
                 <div class="col">
-                  <input type="date" class="form-control" id="date1">
+                  <input type="date" class="form-control" id="date">
                 </div>
                 <div class="col">
-                  <input type="time" class="form-control" id="time1">
+                  <input type="time" class="form-control" id="time">
                 </div>
               </div>
               <small>請輸入日期、時間</small>
@@ -63,17 +63,17 @@
               <input type="checkbox" id="exampleCheck1">
               <label>還沒想好要怎麼用</label>
             </div>
-            <button type="submit" class="btn btn-primary">確定</button>
-            <button type="cancel" class="btn btn-primary">取消</button>
+            <button type="button" id="OK" onclick="newlist()">確定</button>
+            <button type="button" id="cancel">取消</button>
           </form>
         </div>
       </div>
 
 
       <!-- list -->
-      <ul>
+      <div>
         <!-- 1 -->
-        <li>
+        <div>
           <div class="card-header" id="item1" name="todo">
             <input type="checkbox" class="checkbox">
 
@@ -116,14 +116,14 @@
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">還沒想好要怎麼用</label>
                 </div>
-                <button type="submit" class="btn">確定</button>
-                <button type="cancel" class="btn">取消</button>
+                <button type="button" id="OK">確定</button>
+                <button type="button" id="cancel">取消</button>
               </form>
             </div>
           </div>
-        </li>
+        </div>
         <!-- 2 -->
-        <li>
+        <div>
           <div class="card-header" id="item2" name="todo">
             <input type="checkbox" class="checkbox">
             <label style="margin-right:360px;">前端修練2</label>
@@ -134,44 +134,52 @@
             <div class="card-body">
               <form>
                 <div>
-                  <label for="text1">
+                  <label for="text2">
                     <ion-icon name="build"></ion-icon>名稱</label>
-                  <textarea type="text" class="form-control" id="name1" rows="1">456</textarea>
+                  <textarea type="text" class="form-control" id="name2" rows="1">456</textarea>
                 </div>
                 <div>
-                  <label for="date1">
+                  <label for="date2">
                     <ion-icon name="calendar"></ion-icon>到期日</label>
                   <div class="row">
                     <div class="col">
-                      <textarea type="text" class="form-control" id="date1" rows="1">2018/06/11</textarea>
+                      <textarea type="text" class="form-control" id="date2" rows="1">2018/06/11</textarea>
                     </div>
                     <div class="col">
-                      <textarea type="text" class="form-control" id="time1" rows="1">11:59:59</textarea>
+                      <textarea type="text" class="form-control" id="time2" rows="1">11:59:59</textarea>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <label for="file1">
+                  <label for="file2">
                     <ion-icon name="attach"></ion-icon>匯入檔案</label>
-                  <input type="file" class="form-control-file" id="file1">
+                  <input type="file" class="form-control-file" id="file2">
                 </div>
                 <div>
-                  <label for="text1">
+                  <label for="text2">
                     <ion-icon name="chatbubbles"></ion-icon>備註</label>
-                  <textarea class="form-control" id="text1" rows="3">真的來不及拉~~~</textarea>
+                  <textarea class="form-control" id="text2" rows="3">真的來不及拉~~~</textarea>
                 </div>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">還沒想好要怎麼用</label>
+                  <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                  <label class="form-check-label" for="exampleCheck2">還沒想好要怎麼用</label>
                 </div>
-                <button type="submit" class="btn btn-primary">確定</button>
-                <button type="cancel" class="btn btn-primary">取消</button>
+                <button type="button" id="OK">確定</button>
+                <button type="button" id="cancel">取消</button>
               </form>
             </div>
           </div>
-        </li>
-      </ul>
-      <button id="delete"><ion-icon name="trash"></ion-icon></button>
+        </div>
+      </div>
+
+      <div>
+        <ul id="mylist">
+          <li>123</li>
+          <li class="card">456</li>
+        </ul>
+      </div>
+
+      <button type="button" id="delete"><ion-icon name="trash"></ion-icon></button>
     </div>
 
 
