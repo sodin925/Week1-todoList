@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous">
     <title>W1-todolist</title>
+    <meta charset="utf-8"/>
     <link rel="stylesheet" href="./CSS/W1.css">
   </head>
 
@@ -64,7 +65,7 @@
               <label>還沒想好要怎麼用</label>
             </div>
             <button type="button" id="OK" onclick="newlist()">確定</button>
-            <button type="button" id="cancel">取消</button>
+            <button type="reset" id="reset">清除</button>
           </form>
         </div>
       </div>
@@ -77,7 +78,7 @@
           <div class="card-header" id="item1" name="todo">
             <input type="checkbox" class="checkbox">
 
-            <label style="margin-right:370px;">前端修練</label>
+            <label style="margin-right:400px;">運動</label>
             <ion-icon class="heart" name="heart-empty"></ion-icon>
             <ion-icon name="create" data-toggle="collapse" data-target="#note1" aria-expanded="false" aria-controls="note1"></ion-icon>
           
@@ -88,17 +89,17 @@
                 <div>
                   <label for="text1">
                     <ion-icon name="build"></ion-icon>名稱</label>
-                  <textarea type="text" class="form-control" id="name1" rows="1">123</textarea>
+                  <textarea type="text" class="form-control" id="name1" rows="1">爬山</textarea>
                 </div>
                 <div>
                   <label for="date1">
                     <ion-icon name="calendar"></ion-icon>到期日</label>
                   <div class="row">
                     <div class="col">
-                      <textarea type="text" class="form-control" id="date1" rows="1">2018/06/11</textarea>
+                      <textarea type="text" class="form-control" id="date1" rows="1">2018/01/11</textarea>
                     </div>
                     <div class="col">
-                      <textarea type="text" class="form-control" id="time1" rows="1">11:59:58</textarea>
+                      <textarea type="text" class="form-control" id="time1" rows="1">06:09:08</textarea>
                     </div>
                   </div>
                 </div>
@@ -110,14 +111,12 @@
                 <div>
                   <label for="text1">
                     <ion-icon name="chatbubbles"></ion-icon>備註</label>
-                  <textarea class="form-control" id="text1" rows="3">來不及拉~~~</textarea>
+                  <textarea class="form-control" id="text1" rows="3">好累R~~~</textarea>
                 </div>
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">還沒想好要怎麼用</label>
                 </div>
-                <button type="button" id="OK">確定</button>
-                <button type="button" id="cancel">取消</button>
               </form>
             </div>
           </div>
@@ -126,7 +125,7 @@
         <div>
           <div class="card-header" id="item2" name="todo">
             <input type="checkbox" class="checkbox">
-            <label style="margin-right:360px;">前端修練2</label>
+            <label style="margin-right:400px;">休息</label>
             <ion-icon class="heart" name="heart-empty"></ion-icon>
             <ion-icon name="create" data-toggle="collapse" data-target="#note2" aria-expanded="false" aria-controls="note2"></ion-icon>
           </div>
@@ -136,7 +135,7 @@
                 <div>
                   <label for="text2">
                     <ion-icon name="build"></ion-icon>名稱</label>
-                  <textarea type="text" class="form-control" id="name2" rows="1">456</textarea>
+                  <textarea type="text" class="form-control" id="name2" rows="1">睡覺</textarea>
                 </div>
                 <div>
                   <label for="date2">
@@ -146,7 +145,7 @@
                       <textarea type="text" class="form-control" id="date2" rows="1">2018/06/11</textarea>
                     </div>
                     <div class="col">
-                      <textarea type="text" class="form-control" id="time2" rows="1">11:59:59</textarea>
+                      <textarea type="text" class="form-control" id="time2" rows="1">12:00:00</textarea>
                     </div>
                   </div>
                 </div>
@@ -158,14 +157,12 @@
                 <div>
                   <label for="text2">
                     <ion-icon name="chatbubbles"></ion-icon>備註</label>
-                  <textarea class="form-control" id="text2" rows="3">真的來不及拉~~~</textarea>
+                  <textarea class="form-control" id="text2" rows="3">好舒服R~~~</textarea>
                 </div>
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck2">
                   <label class="form-check-label" for="exampleCheck2">還沒想好要怎麼用</label>
                 </div>
-                <button type="button" id="OK">確定</button>
-                <button type="button" id="cancel">取消</button>
               </form>
             </div>
           </div>
