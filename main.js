@@ -35,18 +35,13 @@ $(function () {
     // console.log(res);
     $("#mylist").empty();
     res.forEach(function (todo) {
-      console.log(todo);
-      var q = document.createElement("input");
-      q.setAttribute("type", "checkbox");
-      q.setAttribute("class", "checkbox");
-      $("#mylist").append("<li>" + "名稱: " + todo.title + "   " + "到期日: " + todo.time + "   " + "備註: " + todo.memo + "   " + "</li>");
-      var li = document.getElementsByTagName("li");
-      for (var i = 0; i < li.length; i++) {
-        var span = document.createElement("SPAN");
-        li[i].appendChild(span);
-        span.appendChild(q);
-      }
-        console.log(li);
+      var newli = document.createElement("li"); //list
+      var newckb = document.createElement("input"); //checkbox
+      newckb.setAttribute("type", "checkbox");
+      newckb.setAttribute("class", "checkbox");
+      newli.innerText = "名稱: " + todo.title + " " + "到期日: " + todo.time + " " + "備註: " + todo.memo;
+      newli.appendChild(newckb);
+      document.getElementById("mylist").appendChild(newli);
     });
 
   }).fail(function (err) {
@@ -54,7 +49,7 @@ $(function () {
   });
   $("#OK").on("click", function () {
     let title = $("#nameinput").val().trim();
-    let time = $("#date").val() + "  " + $("#time").val();
+    let time = $("#date").val() + " " + $("#time").val();
     let memo = $("#text1").val();
     if (!title) return false;
     $.ajax({
