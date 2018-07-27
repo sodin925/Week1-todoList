@@ -1,6 +1,15 @@
 /*jshint esversion: 6 */
-$(function () {
 
+var switchPage = function() {
+  $(".container").css("display", "none");
+  $(".menu").css("color", "#00408B");
+  this.style.color = "#FFFFFF";
+  console.log(this.attributes.id.textContent);
+};
+
+$(".menu").on("click", switchPage);
+
+$(function () {
   $(".heart").on("click", function () {
     if ($(this).prop("name") == "heart-empty") {
       $(this).parent("div").css("background", "#FFFFBB");
@@ -11,21 +20,39 @@ $(function () {
     }
   });
 
-  document.getElementById("delete").disabled = true;
-  $(".checkbox").change(function () {
-    if (this.checked) {
-      $(this).parent("div").css("background", "#808080");
-      document.getElementById("delete").disabled = false;
-      var x = this;
-      if ($("#delete").on("click", function () {
-          $(x).parent("div").remove();
-          document.getElementById("delete").disabled = true;
-        }));
-    } else {
-      $(this).parent("div").css("background", "#F2F2F2");
-      document.getElementById("delete").disabled = true;
-    }
+  // new method.
+  $(document).on("click", ".checkbox", function() {
+    if (this.checked)
+      $(this).parent().css("background", "#808080");
+      if (!this.checked)
+        $(this).parent().css("background", "");
   });
+  
+  $("#delete").on("click", function(){
+    $(".checkbox:checked").each(function(){
+      $(this).parent().remove();
+    });
+  });
+  // endredion new method
+
+
+  // document.getElementById("delete").disabled = true;
+  // $("input").change(function () {
+  //   console.log(this);
+  //   if (this.checked) {
+  //     $(this).parent("div").css("background", "#808080");
+  //     document.getElementById("delete").disabled = false;
+  //     var x = this;
+  //     if ($("#delete").on("click", function () {
+  //         $(x).parent("div").remove();
+  //         document.getElementById("delete").disabled = true;
+  //       }));
+  //   } else {
+  //     $(this).parent("div").css("background", "#F2F2F2");
+  //     document.getElementById("delete").disabled = true;
+  //   }
+  // });
+
   $.ajax({
     url: "http://localhost:3000/todo",
     method: "get",
@@ -39,6 +66,12 @@ $(function () {
       var newckb = document.createElement("input"); //checkbox
       newckb.setAttribute("type", "checkbox");
       newckb.setAttribute("class", "checkbox");
+
+      // newckb.onclick = function () {
+      //   console.log(newli);
+
+      // };
+
       newli.innerText = "名稱: " + todo.title + " " + "到期日: " + todo.time + " " + "備註: " + todo.memo;
       newli.appendChild(newckb);
       document.getElementById("mylist").appendChild(newli);

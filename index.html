@@ -14,14 +14,12 @@
 
     <!-- navbar -->
     <nav class="navbar">
-      <span>
-        <a href="#" id="task">My Tasks</a>
-        <a href="#" id="progress">In Progress</a>
-        <a href="#" id="complete">Completed</a>
-      </span>
+        <div class="menu" id="_task">My Tasks</div>
+        <div class="menu" id="_progress">In Progress</div>
+        <div class="menu" id="_complete">Completed</div>
     </nav>
 
-    <div class="container">
+    <div class="container" id="task">
 
       <!-- button -->
 
@@ -180,6 +178,13 @@
       </button>
     </div>
 
+    <div class="container" id="progress"style="display: none">
+      Dragon
+    </div>
+
+    <div class="container" id="complete" style="display: none">
+      Dragon🐉
+    </div>
 
     <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
