@@ -1,63 +1,30 @@
 /*jshint esversion: 6 */
 
-var switchPage = function() {
-  $(".container").css("display", "none");
-  $(".menu").css("color", "#00408B");
-  this.style.color = "#FFFFFF";
-  console.log(this.attributes.id.textContent);
-};
+function checkList() {
+  var allList = mylist.getElementsByTagName("li");
+  var wantToDelete = [];
+  for (var i = 0; i < allList.length; i++) {
+    var thisItem = allList[i];
+    var now = new Date();
+    if (new Date(thisItem.deadLine) < now) {
+      var cloned = document.createElement("li");
+      cloned.innerHTML = thisItem.innerHTML;
+      complete.appendChild(cloned);
+      wantToDelete.push(thisItem);
+    }
+  }
+wantToDelete.forEach(function(a) {a.remove();});
+}
 
-$(".menu").on("click", switchPage);
+
 
 $(function () {
-  $(".heart").on("click", function () {
-    if ($(this).prop("name") == "heart-empty") {
-      $(this).parent("div").css("background", "#FFFFBB");
-      $(this).attr("name", "heart");
-    } else {
-      $(this).parent("div").css("background", "#F2F2F2");
-      $(this).attr("name", "heart-empty");
-    }
-  });
-
-  // new method.
-  $(document).on("click", ".checkbox", function() {
-    if (this.checked)
-      $(this).parent().css("background", "#808080");
-      if (!this.checked)
-        $(this).parent().css("background", "");
-  });
-  
-  $("#delete").on("click", function(){
-    $(".checkbox:checked").each(function(){
-      $(this).parent().remove();
-    });
-  });
-  // endredion new method
-
-
-  // document.getElementById("delete").disabled = true;
-  // $("input").change(function () {
-  //   console.log(this);
-  //   if (this.checked) {
-  //     $(this).parent("div").css("background", "#808080");
-  //     document.getElementById("delete").disabled = false;
-  //     var x = this;
-  //     if ($("#delete").on("click", function () {
-  //         $(x).parent("div").remove();
-  //         document.getElementById("delete").disabled = true;
-  //       }));
-  //   } else {
-  //     $(this).parent("div").css("background", "#F2F2F2");
-  //     document.getElementById("delete").disabled = true;
-  //   }
-  // });
-
   $.ajax({
     url: "http://localhost:3000/todo",
     method: "get",
     dataType: "json",
     data: {},
+
   }).done(function (res) {
     // console.log(res);
     $("#mylist").empty();
@@ -67,19 +34,31 @@ $(function () {
       newckb.setAttribute("type", "checkbox");
       newckb.setAttribute("class", "checkbox");
 
-      // newckb.onclick = function () {
-      //   console.log(newli);
-
-      // };
-
+      newli.deadLine = todo.time;
       newli.innerText = "名稱: " + todo.title + " " + "到期日: " + todo.time + " " + "備註: " + todo.memo;
       newli.appendChild(newckb);
       document.getElementById("mylist").appendChild(newli);
-    });
 
+
+      /* 邏輯錯誤  這部分只會跑一次
+      var now = new Date();
+      var nowTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + "  " + now.getHours() + ':' + now.getMinutes();
+      // console.log(nowTime);
+      var li_time = todo.time;
+      console.log(li_time);
+      var a = document.getElementsByTagName("li");
+      for (var i = 0; i < a.length; i++) {
+        if (li_time[i] < nowTime) {
+          a[i].remove();
+        }
+      }
+      */
+    });
+    var scanner = setInterval(checkList, 5000);
   }).fail(function (err) {
     console.log(err);
   });
+
   $("#OK").on("click", function () {
     let title = $("#nameinput").val().trim();
     let time = $("#date").val() + " " + $("#time").val();
@@ -96,5 +75,36 @@ $(function () {
       }
     });
   });
+});
 
+//navbar click
+$(".menu").on("click", function () {
+  $(".container").css("display", "none");
+  $(".menu").css("color", "#00408B");
+  $(this).css("color", "#FFFFFF");
+  $("#" + this.id.substring(1)).css("display", "");
+});
+
+$(".heart").on("click", function () {
+  if ($(this).prop("name") == "heart-empty") {
+    $(this).parent("div").css("background", "#FFFFBB");
+    $(this).attr("name", "heart");
+  } else {
+    $(this).parent("div").css("background", "#F2F2F2");
+    $(this).attr("name", "heart-empty");
+  }
+});
+
+// new method.
+$(document).on("click", ".checkbox", function () {
+  if (this.checked)
+    $(this).parent().css("background", "#808080");
+  if (!this.checked)
+    $(this).parent().css("background", "");
+});
+
+$("#delete").on("click", function () {
+  $(".checkbox:checked").each(function () {
+    $(this).parent().remove();
+  });
 });
