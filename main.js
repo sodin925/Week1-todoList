@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 
+
 function checkList() {
   var allList = mylist.getElementsByTagName("li");
   var wantToDelete = [];
@@ -7,13 +8,16 @@ function checkList() {
     var thisItem = allList[i];
     var now = new Date();
     if (new Date(thisItem.deadLine) < now) {
+      console.log(thisItem.deadLine);
       var cloned = document.createElement("li");
       cloned.innerHTML = thisItem.innerHTML;
       complete.appendChild(cloned);
       wantToDelete.push(thisItem);
     }
   }
-wantToDelete.forEach(function(a) {a.remove();});
+  wantToDelete.forEach(function (a) {
+    a.remove();
+  });
 }
 
 
@@ -39,22 +43,8 @@ $(function () {
       newli.appendChild(newckb);
       document.getElementById("mylist").appendChild(newli);
 
-
-      /* 邏輯錯誤  這部分只會跑一次
-      var now = new Date();
-      var nowTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + "  " + now.getHours() + ':' + now.getMinutes();
-      // console.log(nowTime);
-      var li_time = todo.time;
-      console.log(li_time);
-      var a = document.getElementsByTagName("li");
-      for (var i = 0; i < a.length; i++) {
-        if (li_time[i] < nowTime) {
-          a[i].remove();
-        }
-      }
-      */
     });
-    var scanner = setInterval(checkList, 5000);
+    var scanner = setInterval(checkList, 1000);
   }).fail(function (err) {
     console.log(err);
   });
