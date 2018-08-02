@@ -41,7 +41,9 @@ ul {
 
 .card-header {
   background-color: #F2F2F2;
-  height: 102px; }
+  height: 102px;
+  position: relative;
+  margin-bottom: 20px; }
   .card-header > span {
     width: 500px; }
     .card-header > span > label {
@@ -52,12 +54,6 @@ ul {
 .card-body {
   background-color: #FFFFFF;
   padding: 40px; }
-
-#item1 {
-  margin-bottom: 20px; }
-
-#item2 {
-  margin-bottom: 20px; }
 
 .checkbox {
   height: 24px;
@@ -71,9 +67,6 @@ ul {
   border-radius: 10px;
   width: 50px;
   height: 50px; }
-
-.favorite {
-  background-color: #FFF2DC; }
 
 #reset {
   background-color: #77DDFF;
@@ -90,3 +83,17 @@ ul {
 .menu {
   text-decoration: none;
   cursor: pointer; }
+
+.heart {
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  right: 60px;
+  text-align: center; }
+
+.create {
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  right: 30px;
+  text-align: center; }
