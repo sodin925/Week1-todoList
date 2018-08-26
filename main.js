@@ -3,7 +3,6 @@
 var complete = [];
 var inProgress = [];
 
-
 var todoTitle = "";
 var todoDate = "";
 var todoTime = "";
