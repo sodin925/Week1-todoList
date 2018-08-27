@@ -34,3 +34,6 @@ var server = http.createServer(function (req, res) {
         }
     });
 }).listen(0);
+server.on('listening', function() {
+  let port = server.address().port;
+})
