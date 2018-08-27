@@ -1,14 +1,36 @@
-let http = require('http');
-let fs = require('fs');
-let server = http.createServer(function(request, response) {
-  response.writeHead(200, {
-    'Content-Type':'text/html'
-  });
-  fs.readFile('./index.html', function(err, html) {
-    if(!err) {
-      response.write(html);
-      response.end();
+var mime = require("mime"); //自動判定content-type
+var url = require("url");
+var fs = require("fs");
+var http = require("http");
+
+var server = http.createServer(function (req, res) {
+    var pathname = url.parse(req.url).pathname;
+    if (pathname.endsWith("/")) {                  //預設頁
+        pathname += "index.html";
     }
-  })
-})
-server.listen(3000, '127.0.0.1');
+    var relativePathname = decodeURIComponent((process.argv[2] || ".") + pathname);  //開啟參數
+    fs.stat(relativePathname, function (err, stats) {
+        if (!err && stats.isDirectory()) {
+            res.writeHead(302, {  //status code 302
+                "Location" : pathname + "/" + (url.parse(req.url).search || "")
+            });
+            res.end();
+            return;
+        }
+        if (!err && stats.isFile()) {
+            fs.readFile(relativePathname, function (err, html) {
+                if (!err) {
+                    res.writeHead(200, {
+                        "Content-type": mime.getType(pathname)
+                    });
+                    res.write(html);
+                    res.end();
+                }
+            });
+        } else {
+            res.writeHead(404);
+            res.write("Not Found");
+            res.end();
+        }
+    });
+}).listen(3000);

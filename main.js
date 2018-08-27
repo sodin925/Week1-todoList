@@ -96,6 +96,7 @@ $("#delete").on("click", function () {
   });
 });
 
+//待修改(item1)
 function CreateItem(data) {
   var div = document.createElement("div");
   div.innerHTML = [
