@@ -33,8 +33,4 @@ var server = http.createServer(function (req, res) {
             res.end();
         }
     });
-}).listen(0);
-server.on('listening', function() {
-  let port = server.address().port;
-  console.log(port);
-});
+}).listen(process.env.PORT);
