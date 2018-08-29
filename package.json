@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node web.js"
+    "start": "node helloWorld.js",
+    "test": "echo \"ERROR: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
